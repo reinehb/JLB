@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Web-to-Lead</title>
+
+<style>
+    /* Overall page */
+    body {
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* Card container */
+    .lead-form {
+        background: #fff;
+        padding: 2rem 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .lead-form h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #4e54c8;
+        font-size: 1.8rem;
+    }
+
+    /* Input styling */
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+        border-color: #4e54c8;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(78,84,200,0.2);
+    }
+
+    /* Submit button */
+    .submit-btn {
+        width: 100%;
+        padding: 0.9rem;
+        background: #4e54c8;
+        border: none;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #3e43b0;
+    }
+</style>
+</head>
+<body>
+
+<form class="lead-form" 
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKY00000LoLlb"
+      method="POST">
+
+    <h1>Contact Us</h1>
+
+    <!-- Required hidden fields -->
+    <input type="hidden" name="oid" value="00DKY00000LoLlb">
+    <input type="hidden" name="retURL" value="https://github.com/reinehb/">
+
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input id="first_name" name="first_name" maxlength="40" type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input id="last_name" name="last_name" maxlength="80" type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input id="mobile" name="mobile" maxlength="40" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" maxlength="80" type="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="company">Company</label>
+        <input id="company" name="company" maxlength="40" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" name="city" maxlength="40" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="state">State/Province</label>
+        <input id="state" name="state" maxlength="20" type="text">
+    </div>
+
+    <button class="submit-btn" type="submit">Submit</button>
+</form>
+
+</body>
+</html>
